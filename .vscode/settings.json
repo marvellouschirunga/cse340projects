@@ -14,5 +14,17 @@
         "**/.mvn": true,
         "**/.exchange_modules_tmp": true,
         ".mule": true
-    }
+    },
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": true
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "render.com",
+            "connectString": "postgres://cse340:LDbeCSqDTcY6jcfgwzo9C5m9ZTdYxtcr@dpg-clbvmt6g1b2c73eqesr0-a.frankfurt-postgres.render.com/cse340_8f7o"
+        }
+    ]
 }
