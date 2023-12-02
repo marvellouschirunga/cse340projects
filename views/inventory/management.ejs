@@ -3,6 +3,14 @@
   <% } else { res.redirect('/') } %>
   <p class="flash-message"><%- messages() %></p>
   
+  <% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
   <div class="management-links">
     <a href="/inv/add-classification">Add New Classification</a>
     <a href="/inv/add-inventory">Add New Inventory</a>

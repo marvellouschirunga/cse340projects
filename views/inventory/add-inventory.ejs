@@ -56,9 +56,7 @@
     />
   
     <label for="inv-description">Description:</label>
-    <textarea id="inv-description" name="inv_description" required>
-  <%= locals.inv_description %></textarea
-    >
+    <textarea id="inv-description" name="inv_description" cols="30" rows="10" required placeholder="Min of 3 characters"><%= locals.inv_description %></textarea>
   
     <label for="inv-image">Image:</label>
     <input
@@ -66,7 +64,7 @@
       id="inv-image"
       name="inv_image"
       required
-      value="<%= locals.inv_image %>"
+      value="/images/vehicles/no-image.png"
       placeholder="Image Path"
       title="Image must be a valid URL"
     />
@@ -77,7 +75,7 @@
       id="inv-thumbnail"
       name="inv_thumbnail"
       required
-      value="<%= locals.inv_thumbnail %>"
+      value="/images/vehicles/no-image.png"
       placeholder="Thumbnail Path"
       title="Thumbnail must be a valid URL"
     />
