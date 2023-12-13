@@ -17,6 +17,7 @@ const utilities = require("./utilities");
 const session = require("express-session");
 const pool = require("./database/");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 
 /* ***********************
  * View Engine and Templates
@@ -54,6 +55,18 @@ app.set("layout", "./layouts/layout"); // not at views root
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+
+/* ***********************
+ * cookieParser Middleware
+ *************************/
+app.use(cookieParser());
+
+/* ***********************
+ * JWT Validation Middleware
+ *************************/
+app.use(utilities.checkJWTToken);
+
+
 /* ***********************
  * Routes
  *************************/
@@ -83,7 +96,7 @@ app.use(async (err, req, res, next) => {
   if (err.status == 404) {
     message = err.message;
   } else {
-    message = "Oh no! There was a crash. Maybe try a different route?";
+    message = "Oh no! We got a tire puncture. Maybe try a different wheel?";
   }
   res.render("errors/error", {
     title: err.status || "Server Error",

@@ -1,5 +1,7 @@
 <h1>Welcome to CSE Motors</h1>
-<p class=flash-messages><%- messages() %></p>
+<% if (messages && messages.notice) { %>
+  <p class="flash-message"><%= messages.notice %></p>
+<% } %>
 
 <div class="homepage-content">
   <div class="banner">

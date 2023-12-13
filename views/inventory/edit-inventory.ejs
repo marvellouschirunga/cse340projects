@@ -16,8 +16,9 @@
 
 <form
   class="management-form inventory-form"
-  action="/inv/add-inventory"
+  action="/inv/edit-inventory"
   method="POST"
+  id="updateForm"
 >
   <label for="inv-make">Make:</label>
   <input
@@ -55,7 +56,7 @@
 
   <label for="inv-description">Description:</label>
   <textarea id="inv-description" name="inv_description" required>
-<%= locals.inv_description %></textarea
+    <%= locals.inv_description %></textarea
   >
 
   <label for="inv-image">Image:</label>
@@ -118,5 +119,13 @@
   <label for="inv-classification">Classification:</label>
   <%- dropdown %>
 
-  <button type="submit">Add Inventory Item</button>
+  <button type="submit" disabled>Update Vehicle</button>
+
+  <input
+    type="hidden"
+    name="inv_id"
+    value="<% if(locals.inv_id) { %><%= locals.inv_id %><% } %>"
+  />
 </form>
+
+<script src="/js/inv-update.js"></script>
