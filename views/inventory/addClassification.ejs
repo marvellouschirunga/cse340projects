@@ -1,0 +1,29 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+  <% }else {
+      res.redirect('/')
+  } %>
+  
+  <%- messages() %>
+  
+  <% if (errors) { %>
+  <ul class="notice">
+  <% errors.array().forEach(error => { %>
+  <li><%= error.msg %></li>
+  <% }) %>
+  </ul>
+  <% } %>
+  
+  <form id="add-classification" action="./addClassification" method="post">
+  <fieldset>
+  <p id="required-info">Field is required.</p>
+  <label>
+  Classification Name
+  <input type="text" name="classification_name" id="classificationName" pattern="[A-Za-z]+[^\s]" required>
+  </label>
+  <div id="instructions">
+  <p>Name must be alphabetic characters only.</p>
+  </div>
+  <input type="submit" value="ADD NOW" class="login-btn">
+  </fieldset>
+  </form>

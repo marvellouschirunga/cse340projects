@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
-
 /******* Change Box Model ***************/
 *,
 *:before,
@@ -7,351 +5,1949 @@
   box-sizing: border-box;
 }
 
-/* Styles for checkerboard pattern and body background */
-html {
-  font-family: "Open Sans", sans-serif;
-  background-image:url("../images/site/small_check.jpg");
-}
-
-body {
-  background-color: rgb(221, 239, 245);
-  max-width: 480px;
-  width: 100%;
-  margin: 10px auto;
-  border-radius: 6px;
-  border: 3px solid #080808;
-  box-shadow: 4px 4px 8px 2px #080808;
-}
-
-/* Header Styles */
-#top-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  margin-bottom: 5px;
-}
-
-.siteName a,
-#tools a,
-.siteName a:visited,
-#tools a:visited {
-  text-decoration: none;
-  color: black;
-}
-
-.siteName {
-  font-size: 1.5rem;
-}
-
-#tools {
-  font-size: 0.8rem;
-}
-
-/* Navigation Styles */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 10px 0;
-  margin: 0 7px;
-  background-color: black;
-  border-radius: 4px;
-}
-
-nav ul li {
-  flex: 1 0 auto;
-  text-align: center;
-  margin: 8px auto;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white; /* Initially white text on a black background */
-  padding: 10px 15px;
-  transition: 0.2s; /* Smooth transition for color change */
-  text-align: center;
-}
-
-nav ul li a:hover {
-  background-color: white; /* Background turns white on hover */
-  color: black; /* Text turns black on hover */
-}
-
-nav ul li a::after {
-  color: white;
-}
-
-/* Body Styles */
-h1 {
-  text-align: center;
-  width: 100%;
-  margin: 15px auto 10px;
-}
-
-.heroInfo {
-  background-color: rgba(240, 240, 240, 0.6);
-  color: #4c96d7;
-  width: fit-content;
-  padding: 10px;
-  border-radius: 4px;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  z-index: 1;
-}
-
-.heroInfo h3,
-p {
-  margin: auto;
-}
-
-.heroInfo a {
-  display: inline-block;
-  margin: 3px auto;
-  padding: 5px 8px;
-  border-radius: 4px;
-  transition: 0.2s;
-}
-
-.heroInfo a,
-.heroInfo a:visited {
-  text-decoration: none;
-  background-color: #4c96d7;
-  color: black;
-}
-
-.heroInfo a:hover {
-  transition: 0.2s;
-  color: white;
-  background-color: #4c96d7;
-}
-
-.banner img {
-  width: 100%;
-}
-
-.banner {
-  position: relative;
-}
-
-h2 {
-  margin: auto;
-  padding: 10px 0 10px 10px;
-}
-
-.reviews ul {
-  margin: 0;
-}
-
-.upgrade-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 20px;
-  justify-content: center;
-}
-
-.upgrade-card img {
-  display: block;
-}
-
-.upgrade-card img,
-a {
-  margin: auto;
-}
-
-.upgrade-card a {
-  color: white;
-}
-
-.upgrade-card {
-  margin: 10px 20px;
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: #4c96d7;
-  border-radius: 4px;
-}
-
-/* Classification View Styles */
-#inv-display {
-  list-style: none;
+body{
+  margin: 0 auto;
+ max-width: 760px;
   padding: 0;
 }
 
-#inv-display li {
-  border: 1px solid black;
-  margin: 1rem;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 4px 4px 8px 2px #080808;
+.siteName a{
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #000;
+  font-weight: bold;
+  position: relative;
+  top: 10px;
+  left: 10px;
 }
 
-#inv-display li a img {
-  width: 100%;
-  margin: auto;
-  border-radius: 6px 6px 0 0;
+#tools {
+display: flex;
+flex-direction: row-reverse;
 }
 
-.namePrice {
-  padding-bottom: 10px;
+#tools a{
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #000;
+  float: right;
+  margin-right: 10px;
+  margin-top: -6%;
 }
 
-.namePrice h2,
-span {
-  padding: 0 0 0 10px;
+h1{
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.3rem;
+  color: #000;
+  margin: 11px;
+  margin-top: 6%;
 }
 
-/* Detail View Styles */
-.vehicle-detail {
+
+
+
+nav ul{
   display: grid;
-  grid-row-gap: 15px;
-  grid-template-columns: 1fr;
-}
-
-.vehicle-detail img {
-  width: 95%;
-  margin: auto;
-  display: block;
-  border-radius: 6px;
-  box-shadow: 4px 4px 16px 1px #080808;
-}
-
-.vehicle-detail img:hover {
-  box-shadow: 4px 4px 16px 2px #080808;
-}
-
-.vehicle-detail-text {
-  font-size: 1.2rem;
-  padding-left: 15px;
-}
-
-.vehicle-detail-text button {
-  padding: 7px 5px;
-  margin: 10px auto;
-}
-
-/* Error Styles */
-.error-message {
+  grid-template-columns: 1fr 1fr 1fr; 
+  list-style-type: none;
   padding-left: 10px;
-}
-
-/* Account Login/Creation Styles */
-.account-form {
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px;
-}
-
-.account-form label,
-.account-form input,
-.account-form p {
-  width: 80%;
-  margin: auto;
-}
-
-.account-form input {
-  border-radius: 4px;
-  padding: 3px;
-}
-
-.form-label {
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 10px;
+  margin-top: 10%;
+  justify-content: space-between;
+  background-color: #000000;  
   text-align: center;
 }
 
-.account-form input[type="submit"] {
-  margin: 10px auto;
-  width: 100px;
-  padding: 5px 3px;
+
+
+
+
+nav ul li a:hover{
+color: #00bbff;
 }
 
-.registration-form input:required:not(:placeholder-shown):invalid,
-.registration-form input:focus:invalid {
-  border: 3px solid red;
-  outline: none;
+nav ul li a{
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  list-style-type: none;
+  color: #fff;
+  cursor: pointer; 
 }
 
-.registration-form input:required:not(:placeholder-shown):valid {
-  border: 2px solid green;
-  outline: none;
+
+
+#car-info{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#own-today{
+  line-height: 5px;
+  color: #0d6e92;
+  font-size: 0.8rem;
+  background-color: rgba(254, 245, 245, 0.5);
+  width: 150px;
+  height: 130px;
+  padding-top: 2px;
+  z-index: 1;
+  margin-left: 5%;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
-/* Management Styles */
-.management-form {
+#own-today h2{
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#own-today p{
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+}
+
+#own-today button{
+  background-color: #0d6e92;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  
+}
+
+
+#delorean{
+  width: 80%;
+  margin-left: 12%;
+  margin-top: 5%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  }
+
+  #own-today button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    color: #000;
+  }
+
+  #container{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 7%;
+  }
+
+  #reviews{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #reviews h3{
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 7%;
+  }
+
+  #reviews ul{
+    margin-top: -1%;
+  }
+
+  #reviews ul li{
+    line-height: 25px;
+  }
+
+  #upgrades{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  #upgrades h3{
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 7%;
+  }
+
+  #items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;  
+    
+  }
+
+  #items div{
+    text-align: center;
+    
+  }
+
+  #items div > div{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border: #0d6e92 3px solid;
+    background-color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+   
+    
+
+  }
+  
+  #container #fire{
+   width: 40%;
+  }
+
+  #container #hubcap{
+    width: 44%;
+  }
+
+  #items div a{
+    
+    text-align: center;
+    
+  }
+
+#items div img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+footer{
+  text-align: center;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0d6e92;
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 15px;
+  
+}
+
+#inv-display {
+display: grid;
+grid-template-columns: 1fr;
+text-align: center;
+margin:0 auto;
+gap: 20px;
+margin-top: 10%;
+margin-bottom: 10%;
+
+}
+
+#inv-display li{
+  list-style: none;
+  border: 3px solid #00000056;
+  border-radius: 15px ;
+  width: 70%;
+  text-align: center;
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 250px;
+  margin-left: 10%;
+}
+
+#inv-display li:hover{
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+  0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#inv-display li h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+}
+
+#inv-display li img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-radius: 13px;
+  max-height: 130px;
+}
+
+#inv-display li a{
+  max-height: 90px;
+}
+
+
+#inv-display li hr {
+  height: 6px;
+  background-color: #000;
+}
+
+#container-detail{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#detail-content1{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+}
+
+#detail-content1 img{
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+#detail-content2{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  text-align: left;
+  margin: 11px;
+  margin-top: 5%;
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+#detail-content2 h2{
+  margin: 11px;
+  font-size: 1.2rem;
+}
+
+#detail-content2 span {
+  font-weight: bolder;
+  font-size: 1rem;
+  color:#01183c;
+}
+
+#detail-content2 #price{
+  margin-left: 8%;
+  padding: 3px;
+  font-size: 1.2rem;
+  color: rgb(0, 79, 0);
+}
+
+#detail-content2 p{
+  font-size: .9rem;
+  margin-left: 8%;
+  padding: 3px;
+  width: 80%;
+}
+
+#error-message{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0 auto;
+  margin: 10px;
+  color: rgb(162, 7, 7);
+}
+#crash{
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
-  width: 80%;
-  margin: auto;
+  align-items: center;
+  justify-content: center;
 }
 
-.management-form button {
-  padding: 7px 5px;
-  margin: 10px auto;
+#crash img{
+  width: 70%;
+
 }
 
-.management-form input:required:not(:placeholder-shown):invalid,
-.management-form input:focus:invalid {
-  border: 3px solid red;
-  outline: none;
+footer #errorTest{
+  color: white;
 }
 
-.management-form input:required:not(:placeholder-shown):valid {
-  border: 2px solid green;
-  outline: none;
+footer #errorTest:hover{
+  color: yellow;
 }
 
-.management-form input,
-.management-form select,
-.management-form textarea {
-  border-radius: 4px;
-  padding: 3px;
-  outline: none;
+#login-form{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.management-links {
+#login-form fieldset{
+  margin: 2rem 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  background-color: #0d6e92;
+}
+
+#login-form label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#login-form input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#login-form .login-btn{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#login-form .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+#login-form h2{
+text-align: center;
+color: #fff;
+font-size: 1.2rem;
+}
+
+#login-form a{
+  color: #fff;
+}
+
+#login-form #check{
   display: flex;
-  justify-content: space-around;
-  margin: 40px auto;
+  font-size: 1rem;
+  margin: 15px;
+  color: #fff;
+  font-weight: bold;
 }
 
-.management-links a {
-  text-decoration: none;
-  color: black;
-  padding: 5px 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  color: black;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: 0.05s;
-  border: 1px solid black;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+#check input{
+  width: 7%;
+  margin-left: 8px;
+  margin-top: 6px;
+  cursor: pointer;
 }
 
-.management-links a:hover {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+#login-form input:required {
+  border-left: red solid 6px;
 }
 
-/* Flash message and notice styles */
-.flash-message {
-  margin: auto;
+#login-form input:required:valid {
+  border-left: green solid 6px;
 }
 
-.notice li {
-  color: red;
+
+/* REGISTRATION FORM */
+
+#registration-form{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#registration-form fieldset{
+  margin: 2rem 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  background-color: #0d6e92;
+}
+
+#registration-form label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#registration-form input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#registration-form .login-btn{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#registration-form .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+
+#registration-form #check2{
+  display: flex;
+  font-size: 1rem;
+  margin: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#check2 input{
+  width: 7%;
+  margin-left: 8px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+#messages {
+  color:rgb(162, 7, 7);
+  font-family: 'Montserrat', sans-serif;
+  width: 90%;
+}
+
+#registration-form #instructions p{
+  color: yellow;
+  margin: 20px;
+}
+
+#registration-form input:required {
+  border-left: red solid 6px;
+}
+
+#registration-form input:required:valid {
+  border-left: green solid 6px;
+}
+
+#registration-form legend{
+ margin-top: 10%;
+}
+
+#registration-form #required-info{
+  color: white;
+  margin-left: 18px;
   font-style: italic;
-  list-style: none;
-  margin: auto;
+  font-weight: 700;
 }
 
-/* Footer Styles */
-footer {
-  margin-top: 50px;
+.notice{
+  color: rgb(151, 0, 0);
+}
+
+
+#inventoryMenu a{
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 11px;
+  margin-top: 10px;
+}
+
+#inventoryMenu {
+  padding-bottom: 30px;
+}
+
+/* --- ADD CLASSIFICATION FORM --- */
+
+#add-classification{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#add-classification fieldset{
+  margin: 2rem 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  background-color: #0d6e92;
+}
+
+#add-classification label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#add-classification input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#add-classification .login-btn{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#add-classification .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+#add-classification input:required {
+  border-left: red solid 6px;
+}
+
+#add-classification input:required:valid {
+  border-left: green solid 6px;
+}
+
+#add-classification #instructions p{
+  color: yellow;
+  margin: 20px;
+}
+
+#add-classification #required-info{
+  color: white;
+  margin-left: 18px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+
+
+/* --- ADD INVENTORY FORM --- */
+
+#add-inventory{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#add-inventory fieldset{
+  margin: 2rem 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  background-color: #0d6e92;
+}
+
+#add-inventory label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#add-inventory input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#add-inventory textarea{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  resize: none;
+}
+
+#add-inventory select{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#add-inventory .login-btn{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#add-inventory .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+#add-inventory input:required {
+  border-left: red solid 6px;
+}
+
+#add-inventory input:required:valid {
+  border-left: green solid 6px;
+}
+
+
+
+#add-inventory #required-info{
+  color: white;
+  margin-left: 18px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+#manage-item{
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 2%;
+  padding-bottom: 15%;
+}
+
+#manage-item select{
   padding: 10px;
+  border: 1px solid #000;
+  font-size: 1rem;
+}
+
+#manage-item table{
+  text-align: left;
+  margin-top: 5%;
+
+}
+
+table td{
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+}
+
+table a:hover{
+  color: red;
+}
+
+
+/* --- UPDATE INVENTORY FORM --- */
+
+#updateForm{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#updateForm fieldset{
+  margin: 2rem 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  background-color: #0d6e92;
+}
+
+#updateForm label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#updateForm input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#updateForm textarea{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  resize: none;
+}
+
+#updateForm select{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#updateForm .login-btn{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#updateForm .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+#updateForm input:required {
+  border-left: red solid 6px;
+}
+
+#updateForm input:required:valid {
+  border-left: green solid 6px;
+}
+
+
+
+#updateForm #required-info{
+  color: white;
+  margin-left: 18px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+
+
+
+
+/* --- DELETE INVENTORY FORM --- */
+
+#deleteForm{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#deleteForm fieldset{
+  margin: 2rem 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  background-color: #0d6e92;
+}
+
+#deleteForm label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#deleteForm input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+
+#deleteForm .login-btn{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#deleteForm .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+
+
+
+
+#deleteForm #required-info{
+  color: white;
+  margin-left: 18px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+#welcome{
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 8%;
+  line-height: 10px;
+  
+}
+
+#welcome h2{
+  margin-left: 3%;
+  font-size: 1rem;
+}
+
+#welcome p{
+  margin-left: 3%;
+  font-size: .8rem;
+}
+
+#welcome p a:hover{
+  color: red;
+}
+
+#permission{
+  text-align: center;
+}
+
+#accountMenu{
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 12%;
+  line-height: 10px;
+  margin-bottom: 10%;
+}
+
+#accountMenu h3{
+  margin-left: 3%;
+  font-size: 1rem;
+}
+
+#accountMenu p{
+  margin-left: 3%;
+  font-size: .8rem;
+}
+
+#accountMenu p a:hover{
+  color: red;
+}
+
+
+
+#messageCenter{
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 12%;
+  line-height: 10px;
+  margin-bottom: 10%;
+}
+
+#messageCenter h3{
+  margin-left: 3%;
+  font-size: 1rem;
+}
+
+#messageCenter li{
+  margin-left: -2%;
+  font-size: .8rem;
+  line-height: 15px;
+}
+
+#messageCenter li a:hover{
+  color: red;
+}
+
+
+
+
+/* --- UPDATE ACCOUNT FORM --- */
+
+#updateAccount{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#updateAccount fieldset{
+  margin: 2rem 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  background-color: #0d6e92;
+}
+
+#updateAccount label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#updateAccount input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#updateAccount textarea{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  resize: none;
+}
+
+#updateAccount select{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#updateAccount .login-btn{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#updateAccount .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+#updateAccount input:required {
+  border-left: red solid 6px;
+}
+
+#updateAccount input:required:valid {
+  border-left: green solid 6px;
+}
+
+
+
+#updateAccount #required-info{
+  color: white;
+  margin-left: 18px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+
+/* UPDATE PASSWORD FORM */
+
+#updatePassword{
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#updatePassword fieldset{
+  margin: 2rem 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+  background-color: #0d6e92;
+}
+
+#updatePassword label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#updatePassword input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#updatePassword .login-btn{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#updatePassword .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+
+#updatePassword #check2{
+  display: flex;
+  font-size: 1rem;
+  margin: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#check2 input{
+  width: 7%;
+  margin-left: 8px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+#messages {
+  color:rgb(162, 7, 7);
+  font-family: 'Montserrat', sans-serif;
+  width: 90%;
+}
+
+#updatePassword #instructions p{
+  color: yellow;
+  margin: 20px;
+}
+
+#updatePassword input:required {
+  border-left: red solid 6px;
+}
+
+#updatePassword input:required:valid {
+  border-left: green solid 6px;
+}
+
+#updatePassword legend{
+ margin-top: 10%;
+}
+
+#updatePassword #required-info{
+  color: white;
+  margin-left: 18px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+#upPassTitle{
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 2%;
+}
+
+
+#reply-form{
+display: none;
+}
+
+#inboxTable{
+  font-family: 'Montserrat', sans-serif;
+  border-collapse: collapse;
+  font-size: .6rem;
+  margin: auto;
+  margin: 10px;
+  
+}
+
+#inboxTable td{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#inboxTable th{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#inboxTable tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#inboxOptions{
+  font-family: 'Montserrat', sans-serif; 
+  margin-left: -3%;
+}
+
+#internal{
+  font-family: 'Montserrat', sans-serif; 
+  margin-left: 3%; 
+  font-size: .8rem;
+  color:#020408;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#newMessage{
+  font-family: 'Montserrat', sans-serif; 
+  width: 70%;
+}
+
+#newMessage label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #000;
+  font-size: .9rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#newMessage input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+#newMessage textarea{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #000;
+  resize: none;
+}
+
+#newMessage select{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+#newMessage .login-btn{
+  width: 30%;
+  text-align: center;
+  margin-left: 6%;
+  cursor: pointer;
+}
+
+#newMessage .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+#newMessage input:required {
+  border-left: red solid 6px;
+}
+
+#newMessage input:required:valid {
+  border-left: green solid 6px;
+}
+
+#return{
+font-family: 'Montserrat', sans-serif;  
+margin-left: 3%;
+}
+
+
+
+#reply-form{
+  font-family: 'Montserrat', sans-serif; 
+  width: 70%;
+  margin-bottom: 5%;
+}
+
+#reply-form label{
+  display: block;
+  text-align: left;
+  padding-top: 1rem;
+  color: #000;
+  font-size: .9rem;
+  font-weight: bolder;
+  margin: 15px;
+}
+
+#reply-form input{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+#reply-form textarea{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #000;
+  resize: none;
+}
+
+#reply-form select{
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+#reply-form .login-btn{
+  width: 30%;
+  text-align: center;
+  margin-left: 6%;
+  cursor: pointer;
+}
+
+#reply-form .login-btn:hover{
+background-color: #0d6e92;
+color: #fff;
+}
+
+
+
+
+.buttons{
+  width: 30%;
+  text-align: center;
+  margin-left: 3%;
+  cursor: pointer; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.buttons:hover{
+  background-color: #0d6e92;
+  color: #fff;
+}
+
+hr{
+  width: 90%;
+  background-color: #000;
+  height: 3px;
+}
+
+#messageview{
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 12%;
+  line-height: 5px;
+  margin-bottom: 10px;
+
+}
+
+#messageview strong{
+  font-size: .8rem;
+  font-weight: bolder;
+}
+
+#messageview span{
+font-size: .7rem;
+font-weight: 200;
+}
+
+#messageB{
+  font-size: .8rem;
+}
+
+#noMessages {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 3%;
+  color:rgb(151, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******* MEDIA QUERY *******/
+
+@media only screen and (min-width: 35rem) {
+  #tools a{
+   
+    font-size: 1.1rem;
+
+    float: right;
+    margin-right: 12px;
+    margin-top: -2%;
+  }
+
+  
+.siteName a{
+
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  top: 35px;
+  left: 10px;
+}
+
+nav ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  line-height: 30px;
+}
+
+h1{
+font-size: 2rem;
+}
+
+#own-today{
+  margin-top: 7%;
+  width: 200px;
+  height: 180px;
+
+}
+
+#own-today h2{
+  font-size: 1.4rem;
+}
+
+#own-today p{
+  font-size: 1.4rem;
+}
+
+#own-today button{
+  font-size: 1.4rem;
+  padding: 10px 15px;
+  
+}
+
+
+
+
+
+
+#items div img{
+ 
+  width: 50%;
+}
+
+#items div a{
+  font-size: 1.5rem;
+}
+
+#items div{
+  width: 80%;
+
+}
+
+#upgrades h3{
+font-size: 1.4rem;
+margin-left: 1%;
+}
+
+#reviews h3{
+  font-size: 1.4rem;
+  margin-left: 1%;
+}
+
+#reviews ul{
+  margin-top: -1%;
+}
+
+#reviews ul li{
+  font-size: 1.4rem;
+}
+
+#inv-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #inv-display li{
+    width: 90%;
+    margin-left: 0;
+  }
+
+  #detail-content2 p{
+    font-size: 1rem;
+
+  }
+
+  #detail-content2 span {
+
+    font-size: 1.1rem;
+
+  }
+
+  #error-message{
+    font-size: 1.4rem;
+  }
+
+  #login-form{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #login-form input{
+    padding: 1rem;
+  }
+
+  #login-form #check{
+
+    font-size: 1.2rem;
+
+  }
+  
+  #check input{
+    width: 5%;
+  }
+
+  /* REGISTRATION FORM */
+
+  #registration-form{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #registration-form input{
+    padding: 1rem;
+  }
+
+  #registration-form #check2{
+
+    font-size: 1.2rem;
+
+  }
+  
+  #check2 input{
+    width: 5%;
+  }
+
+  #add-classification{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #add-classification input{
+    padding: 1rem;
+  }
+
+  #add-inventory{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #add-inventory input{
+    padding: 1rem;
+  }
+
+  #add-inventory select{
+    width: 50%;
+  }
+
+
+  /*** UPDATE FORM ***/
+
+
+  #updateForm{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #updateForm input{
+    padding: 1rem;
+  }
+
+  #updateForm select{
+    width: 50%;
+  }
+
+
+   /*** DELETE FORM ***/
+
+
+   #deleteForm{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #deleteForm input{
+    padding: 1rem;
+  }
+
+  #deleteForm select{
+    width: 50%;
+  }
+
+
+  #welcome{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 4%;
+    line-height: 10px;
+    
+  }
+  
+  #welcome h2{
+    margin-left: 2%;
+    font-size: 1.4rem;
+  }
+  
+  #welcome p{
+    margin-left: 2%;
+    font-size: 1.1rem;
+  }
+  
+
+
+  
+  #accountMenu h3{
+    margin-left: 2%;
+    font-size: 1.4rem;
+  }
+  
+  #accountMenu p{
+    margin-left: 2%;
+    font-size: 1.1rem;
+  }
+  
+  #accountMenu p:hover{
+    color: red;
+  }
+
+
+  #messageCenter h3{
+    margin-left: 2%;
+    font-size: 1.4rem;
+  }
+  
+  #messageCenter li{
+    margin-left: -1%;
+    font-size: 1.1rem;
+    line-height: 20px;
+  }
+  
+
+
+
+  /* --- UPDATE ACCOUNT FORM --- */
+
+  #updateAccount{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #updateAccount input{
+    padding: 1rem;
+  }
+
+  #updateAccount select{
+    width: 50%;
+  }
+
+
+
+  /* UPDATE PASSWORD FORM */
+
+  #updatePassword{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #updatePassword input{
+    padding: 1rem;
+  }
+
+  #updatePassword #check2{
+
+    font-size: 1.2rem;
+
+  }
+
+  #inboxTable{
+    font-family: 'Montserrat', sans-serif;
+    border-collapse: collapse;
+    font-size: 1rem;
+    margin-left: 3%;
+    
+  }
+
+  #inboxOptions{
+    font-family: 'Montserrat', sans-serif; 
+    margin-left: 0;
+  }
+
+  #internal{
+    font-family: 'Montserrat', sans-serif; 
+    margin-left: 2%; 
+    font-size: 1rem;
+
+  }
+
+  #newMessage select{
+    font-size: 1rem;
+    width: 40%;
+
+  }
+
+  #newMessage label{
+
+
+    font-size: 1.1rem;
+  
+  }
+
+  #newMessage .login-btn{
+ 
+    margin-left: 3%;
+
+  }
+
+  #return{ 
+    margin-left: 2%;
+    }
+  
+    
+.buttons{
+  width: 20%;
+  text-align: center;
+  margin-left: 2%;
+  cursor: pointer; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+  
+}
+
+.buttons:hover{
+  background-color: #0d6e92;
+  color: #fff;
+}
+
+
+#messageview{
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 7%;
+  line-height: 5px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+
+}
+
+#messageview strong{
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+#messageview span{
+font-size: .9rem;
+font-weight: 200;
+}
+
+#messageB{
+  font-size: .9rem;
+}
+
+
+
+#reply-form select{
+  font-size: 1rem;
+  width: 40%;
+
+}
+
+#reply-form label{
+
+
+  font-size: 1.1rem;
+
+}
+
+#reply-form .login-btn{
+
+  margin-left: 3%;
+
+}
+
+
+
+}
+
+@media only screen and (min-width: 64rem) {
+
+  html{
+    background-image: url("/images/site/small_check.jpg");
+  }
+
+  body{
+    background-color: #fff;
+    margin-top: 1%;
+    border: 5px solid #0791ec;
+    margin-bottom: 1%;
+    border-radius: 1%;
+  }
+
+  #own-today{
+ 
+    width: 230px;
+    height: 218px;
+  
+   
+  }
+  
+  #own-today h2{
+  font-size: 1.8rem;
+  }
+  
+  #own-today p{
+    font-size: 1.8rem;
+  }
+  
+  #own-today button{
+    font-size: 1.8rem;
+    padding: 10px 15px;
+    
+  }
+
+  #container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 7%;
+  }
+
+  #upgrades{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #reviews{
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  #reviews ul li{
+   line-height: 40px;
+   font-size: 1.2rem;
+  }
+
+  #container h3{
+    margin-left: 3%;
+    font-size: 1.7rem;
+  }
+  #items div img{
+ 
+    width: 50%;
+  }
+
+  #items div > div{
+    margin: 10px;
+    width: 100%;
+
+   
+    
+
+  }
+   
+  #items div{
+    text-align: center;
+  }
+  #items div a{
+    font-size: 1.2rem;
+    margin-left: 10%;
+  }
+
+  #container-detail{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  #detail-content1 img{
+    margin-top: 5%;
+    width: 90%;
+
+  }
+
+  #error-message{
+
+    font-size: 1.5rem;
+    color: rgb(162, 7, 7);
+  }
+
+  #login-form .login-btn{
+    font-size: 1.1rem;
+  }
+
+  #login-form #check{
+
+    font-size: 1rem;
+
+  }
+  
+  #check input{
+    width: 4%;
+  }
+
+   /* REGISTRATION FORM */
+  
+
+
+   #registration-form .login-btn{
+    font-size: 1.1rem;
+  }
+
+  #registration-form #check2{
+
+    font-size: 1rem;
+
+  }
+  
+  #check2 input{
+    width: 4%;
+  }
+
+  #add-classification .login-btn{
+    font-size: 1.1rem;
+  }
+
+  #add-inventory .login-btn{
+    font-size: 1.1rem;
+  }
+
+  #add-inventory select{
+    width: 50%;
+  }
+  
+  nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+  }
+
+
+  #updateForm .login-btn{
+    font-size: 1.1rem;
+  }
+
+  #updateForm select{
+    width: 50%;
+  }
+
+  #deleteForm .login-btn{
+    font-size: 1.1rem;
+  }
+
+  #deleteForm select{
+    width: 50%;
+  }
+
+  #welcome{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 4%;
+    line-height: 20px;
+    
+  }
+
+  #accountMenu{
+  
+    line-height: 20px;
+
+  }
+
+
+  #updateAccount .login-btn{
+    font-size: 1.1rem;
+  }
+
+
+  /* REGISTRATION FORM */
+  
+
+
+  #updatePassword .login-btn{
+    font-size: 1.1rem;
+  }
+
+  #updatePassword #check2{
+
+    font-size: 1rem;
+
+  }
+
+
 }

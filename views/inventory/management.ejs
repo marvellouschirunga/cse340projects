@@ -11,14 +11,14 @@
 <% } %>
 
 <div class="management-links">
-  <a href="/inv/add-classification">Add New Classification</a>
-  <a href="/inv/add-inventory">Add New Inventory</a>
+  <a href="./addClassification">Add New Classification</a>
+  <a href="./addInventory">Add New Vehicle</a>
 </div>
 
 <div id="inventory-management-menu">
   <h2>Manage Inventory</h2>
   <p>Select classification to view vehicles</p>
-  <%- classificationSelect %>
+  <%- options %>
 </div>
 
 <table id="inventoryDisplay"></table>

@@ -1,65 +1,55 @@
 <% if (title) { %>
-<h1><%= title %></h1>
-<% } else { res.redirect('/') } %> <% if (messages && messages.notice) { %>
-<p class="flash-message"><%= messages.notice %></p>
-<% } %> <% if (errors) { %>
+  <h1><%= title %></h1>
+  <% } else {
+      res.redirect('/')
+  } %>
+<%- messages() %>
+
+<% if (errors) { %>
 <ul class="notice">
-  <% errors.array().forEach(error => { %>
-  <li><%= error.msg %></li>
-  <% }) %>
+<% errors.array().forEach(error => { %>
+<li><%= error.msg %></li>
+<% })  %>
 </ul>
 <% } %>
 
-<p class="form-label"><i>All fields are required</i></p>
-<form
-  class="account-form registration-form"
-  action="/account/register"
-  method="post"
->
-  <label for="first_name">First Name:</label>
-  <input
-    type="text"
-    id="first_name"
-    name="account_firstname"
-    placeholder=" "
-    required
-    value="<%= locals.account_firstname %>"
-  />
+<form id="registration-form" action="/account/register" method="post">
+    <fieldset>
+    <p id="required-info">All fields are required.</p>
+    <label>
+    First name:
+    <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.account_firstname %>">
+    </label>
+     <label>
+    Last name:
+    <input type="text" name="account_lastname" id="accountLastname" required value="<%= locals.account_lastname %>">
+    </label>
+    <label>
+    Email address:
+    <input type="email" name="account_email" id="accountEmail" required value="<%= locals.account_email %>">
+    </label>
+    <label>
+    Password:
+    <input type="password" name="account_password" id="input-pass2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+    </label>
+    <div id="instructions">
 
-  <label for="last_name">Last Name:</label>
-  <input
-    type="text"
-    id="last_name"
-    name="account_lastname"
-    placeholder=" "
-    required
-    value="<%= locals.account_lastname %>"
-  />
-
-  <label for="email">Email:</label>
-  <input
-    type="email"
-    id="email"
-    name="account_email"
-    placeholder="example@email.com"
-    required
-    value="<%= locals.account_email %>"
-  />
-
-  <label for="password">Password:</label>
-  <input
-    type="password"
-    id="password"
-    name="account_password"
-    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"
-    title="Must contain at least one number, one uppercase letter, one lowercase letter, one special character, and be at least 12 characters long."
-    placeholder=" "
-    required
-  />
-  <p>
-    Password should be at least 12 characters in length, and contain at least 1
-    capital letter, 1 number, and 1 special character
-  </p>
-
-  <input type="submit" value="Register" />
-</form>
+      <p>There must be at least 12 characters, one must be a number, one must be a lowercase letter, one must be a capital letter, and one must be a non-alphanumeric character.</p>
+    </div>
+    <div id="check2">
+    <p>Show password:</p>
+    <input id="checkbox2" type="checkbox" onclick="myFunction()">
+    </div>
+    <input type="submit" value="REGISTER" class="login-btn">
+    </fieldset>
+    </form>
+    <script>
+        function myFunction() {
+      var x = document.getElementById("input-pass2");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>

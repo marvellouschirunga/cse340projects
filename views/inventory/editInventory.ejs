@@ -1,0 +1,67 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+  <% }else {
+      res.redirect('/')
+  } %>
+  
+  <%- messages() %>
+  
+  <% if (errors) { %>
+  <ul class="notice">
+  <% errors.array().forEach(error => { %>
+  <li><%= error.msg %></li>
+  <% }) %>
+  </ul>
+  <% } %>
+
+  <form id="updateForm" action="/inv/update" method="post">
+      <fieldset>
+          <p id="required-info">Field is required.</p>
+          <label>
+          Classification
+          <%- options %>
+          </label>
+          <label>
+          Make
+          <input type="text" name="inv_make" value="<%= locals.inv_make %>" id="invMake" pattern=".{3,}" placeholder="Min of 3 characters" required>
+          </label>
+          <label>
+          Model
+          <input type="text" name="inv_model" value="<%= locals.inv_model %>" id="invModel" pattern=".{3,}" placeholder="Min of 3 characters" required>
+          </label>
+          <label>
+          Description
+          <textarea name="inv_description" id="invDescription" rows="4" cols="50" maxlength="100" required><%= locals.inv_description %></textarea>
+          </label>
+          <label>
+          Image Path
+          <input type="text" name="inv_image" value="<%= locals.inv_image %>" id="invImage" placeholder="/images/vehicles/filename.png" required>
+          </label>
+          <label>
+          Thumbnail Path
+          <input type="text" name="inv_thumbnail"  value="<%= locals.inv_thumbnail %>" id="invThumbnail" placeholder="/images/vehicles/filename.png" required>
+          </label>
+          <label>
+          Price
+          <input type="text" name="inv_price"  value="<%= locals.inv_price %>" id="invPrice"  placeholder="decimal or integer" pattern="^([0-9\.]*$)" required>
+          </label>
+          <label>
+          Year
+          <input type="text" name="inv_year" value="<%= locals.inv_year %>" id="invYear" placeholder="4-digit year" pattern="[0-9]{4}" required>
+          </label>
+          <label>
+          Miles
+          <input type="text" name="inv_miles" value="<%= locals.inv_miles %>"  id="invMiles" placeholder="digits only" pattern="[0-9]+" required>
+          </label>
+          <label>
+          Color
+          <input type="text" name="inv_color" value="<%= locals.inv_color %>" id="invColor" pattern="[a-zA-Z]+" required>
+          </label>
+          <input type="submit" value="UPDATE" class="login-btn" disabled>
+          <input type="hidden" name="inv_id"
+<% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+<% } %>>
+          </fieldset>
+  </form>
+
+  <script src="../../js/invUpdate.js"></script>

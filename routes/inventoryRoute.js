@@ -1,82 +1,82 @@
 // Needed Resources
-const express = require("express");
-const router = new express.Router();
-const invController = require("../controllers/invController");
-const utilities = require("../utilities");
-const invValidate = require("../utilities/management-validation");
+const express = require("express")
+const router = new express.Router()
+const invController = require("../controllers/invController")
+const utilities = require("../utilities")
+const classValidate = require("../utilities/inventoryValidation")
 
 // Route to build inventory by classification view
-router.get(
-  "/type/:classificationId",
-  utilities.handleError(invController.buildByClassificationId)
-);
+router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
 
-// Route for detail view
-router.get("/detail/:inv_id", utilities.handleError(invController.buildById));
+// Route to build inventory by id
+router.get("/detail/:invId", utilities.handleErrors(invController.buildByInventoryId));
 
-// Route for inv management
-router.get("/", utilities.checkAdmin, (req, res, next) => {
-  utilities.handleError(invController.buildManageInventory)(req, res, next);
-});
+// Route to Management View
+router.get("/", 
+utilities.checkLogin,
+utilities.checkPermission,
+utilities.handleErrors(invController.buildManagementView));
 
-// Route for add classification page
-router.get("/add-classification", utilities.checkAdmin, (req, res, next) => {
-  utilities.handleError(invController.buildAddClassification)(req, res, next);
-});
+// Route to Add Classification View
+router.get("/addClassification", 
+utilities.checkLogin,
+utilities.checkPermission,
+utilities.handleErrors(invController.buildAddClassification));
 
-// Route for getInventory
-router.get(
-  "/getInventory/:classification_id",
-  utilities.handleError(invController.getInventoryJSON)
-);
+// Route to Add Inventory View
+router.get("/addInventory",
+utilities.checkLogin,
+utilities.checkPermission, 
+utilities.handleErrors(invController.buildAddInventory));
 
-// Handle add classification post request
-router.post(
-  "/add-classification",
-  invValidate.classificationRules(),
-  invValidate.checkClassificationData,
-  utilities.handleError(invController.addClassification)
-);
+// Route to get Inventory
+router.get("/getInventory/:classification_id", 
+utilities.checkLogin,
+utilities.checkPermission,
+utilities.handleErrors(invController.getInventoryJSON));
 
-// Route for add inventory page
-router.get("/add-inventory", utilities.checkAdmin, (req, res, next) => {
-  utilities.handleError(invController.buildAddInventory)(req, res, next);
-});
+// Route to get Edit
+router.get("/edit/:invId",
+utilities.checkLogin,
+utilities.checkPermission,
+ utilities.handleErrors(invController.editInventoryView));
 
-// Handle add inventory post request
-router.post(
-  "/add-inventory",
-  invValidate.inventoryRules(),
-  invValidate.checkInventoryData,
-  utilities.handleError(invController.addInventory)
-);
+// Route to get Delete
+router.get("/delete/:invId", 
+utilities.checkLogin,
+utilities.checkPermission,
+utilities.handleErrors(invController.deleteView))
 
-// Route for inventory modification
-router.get(
-  "/edit/:inv_id",
-  utilities.checkAdmin,
-  utilities.handleError(invController.buildInvEdit)
-);
 
-// Handle inventory modification post request
-router.post(
-  "/edit-inventory",
-  invValidate.inventoryRules(),
-  invValidate.checkUpdateData,
-  utilities.handleError(invController.updateInventory)
-);
 
-// Route for delete inventory
-router.get(
-  "/delete/:inv_id",
-  utilities.checkAdmin,
-  utilities.handleError(invController.buildDeleteConfirmation)
-);
+// Process the add Classification data
+router.post('/addClassification', 
+utilities.checkLogin,
+utilities.checkPermission,
+classValidate.classificationRules(),
+classValidate.checkClassData,
+utilities.handleErrors(invController.addClassification));
 
-// Handle delete inventory post request
-router.post(
-  "/delete-inventory",
-  utilities.handleError(invController.deleteInventory)
-);
+// Process the add Inventory data
+router.post('/addInventory', 
+utilities.checkLogin,
+utilities.checkPermission,
+classValidate.inventoryRules(),
+classValidate.checkInvData,
+utilities.handleErrors(invController.addInventory));
+
+// Update Inventory route
+router.post("/update",
+utilities.checkLogin,
+utilities.checkPermission, 
+classValidate.newInventoryRules(), 
+classValidate.checkUpdateData, 
+utilities.handleErrors(invController.updateInventory));
+
+// Process the delete Inventory request
+router.post("/delete", 
+utilities.checkLogin,
+utilities.checkPermission,
+utilities.handleErrors(invController.deleteItem));
 
 module.exports = router;
